@@ -2,27 +2,27 @@
 
 namespace App\Repository;
 
-use App\Entity\Etudiant;
+use App\Entity\Etablissement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Etudiant>
+ * @extends ServiceEntityRepository<Etablissement>
  *
- * @method Etudiant|null find($id, $lockMode = null, $lockVersion = null)
- * @method Etudiant|null findOneBy(array $criteria, array $orderBy = null)
- * @method Etudiant[]    findAll()
- * @method Etudiant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Etablissement|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Etablissement|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Etablissement[]    findAll()
+ * @method Etablissement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtudiantRepository extends ServiceEntityRepository
+class EtablissementRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Etudiant::class);
+        parent::__construct($registry, Etablissement::class);
     }
 
 //    /**
-//     * @return EtudiantFixtures[] Returns an array of EtudiantFixtures objects
+//     * @return Etablissement[] Returns an array of Etablissement objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +36,7 @@ class EtudiantRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?EtudiantFixtures
+//    public function findOneBySomeField($value): ?Etablissement
 //    {
 //        return $this->createQueryBuilder('e')
 //            ->andWhere('e.exampleField = :val')
