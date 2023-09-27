@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Etablissement;
 use App\Entity\Etudiant;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -27,9 +29,13 @@ class EtudiantType extends AbstractType
             ])
             ->add('anniversaire', DateType::class, [
                 'widget' => 'choice',
-                'years' => range(1970,2023),
+                'years' => range(1970,2023),])
 
-    ]);
+            ->add('etablissement',EntityType::class,[
+                'class' => Etablissement::class,
+                'choice_label' => 'nom',
+            ]);
+
         ;
     }
 
