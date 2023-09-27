@@ -25,9 +25,10 @@ class EtudiantFixtures extends Fixture
             $etudiant->setSexe($sexe);
             $etudiant->setAnniversaire(new \DateTime('1951-05-21'));
             $etudiant->setEtablissement($listeEtablissement[array_rand($listeEtablissement)]);
+            $manager->persist($etudiant);
         }
 
-        $manager->persist($etudiant);
+
         $manager->flush();
 
     }
